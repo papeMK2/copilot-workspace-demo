@@ -7,9 +7,16 @@ class Program
         Console.WriteLine("Enter the number of GUIDs to generate:");
         if (int.TryParse(Console.ReadLine(), out int numberOfGuids))
         {
-            for (int i = 0; i < numberOfGuids; i++)
+            if (numberOfGuids > 0)
             {
-                Console.WriteLine(Guid.NewGuid());
+                for (int i = 0; i < numberOfGuids; i++)
+                {
+                    Console.WriteLine(Guid.NewGuid());
+                }
+            }
+            else
+            {
+                Console.WriteLine("Please enter a positive number.");
             }
         }
         else
